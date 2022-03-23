@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: .7s;
+}
+
+.card:hover{
+    opacity: 0.5;
+    color: #0d253f;
+}
+
+.card img {
+    border-radius: 20px;
+    width: 200px;
+}
+
+.movieTitle{
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.movieDate{
+    font-size: 13px;
+    margin-left: 10px;
+}

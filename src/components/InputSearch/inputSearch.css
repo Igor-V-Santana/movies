@@ -1,0 +1,48 @@
+.inputSearch{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+}
+
+.a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #0d253f;
+    color: #fff;
+    width: 65%;
+    padding: 0 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.a input{
+    width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+}
+.a input::placeholder{
+    font-size: 20px;
+}
+
+
+.a button{
+    background: linear-gradient(to left, #6a99cc, rgb(41, 106, 172));
+    color: #fff;
+    width: 10%;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    position: relative;
+    right: 50px;
+    cursor: pointer;
+    transition: .7s;
+    font-size: 20px;
+}
+.a button:hover{
+    color: #000;
+}
