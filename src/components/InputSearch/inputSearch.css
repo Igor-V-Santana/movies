@@ -29,20 +29,20 @@
     font-size: 20px;
 }
 
-
-.a button{
-    background: linear-gradient(to left, #6a99cc, rgb(41, 106, 172));
-    color: #fff;
-    width: 10%;
-    height: 50px;
-    border-radius: 30px;
-    border: none;
+.btnSearchj {
+    background-color: #1a65b6;
+    font-size: 20px;
+    padding: 12px 30px;
+    border-radius: 20px;
     position: relative;
     right: 50px;
+    top: 1px;
+    color: #fff;
+    text-decoration: none;
     cursor: pointer;
     transition: .7s;
-    font-size: 20px;
 }
-.a button:hover{
+
+.btnSearchj:hover{
     color: #000;
 }

@@ -1,14 +1,18 @@
 import Header from "./components/Header";
-import InputSearch from "./components/InputSearch";
-import MainPopulares from "./components/MainPopulares";
+import Footer from "./components/Footer";
+import MainRoutes from "./Routes";
+import { HashRouter } from "react-router-dom";
+import TextProvider from "./components/context/Text";
 
 function App() {
   return (
-    <>
-      <Header />
-      <InputSearch />
-      <MainPopulares />
-    </>
+    <HashRouter>
+      <TextProvider>
+        <Header />
+        <MainRoutes />
+        <Footer />
+      </TextProvider>
+    </HashRouter>
   );
 }
 
