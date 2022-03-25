@@ -27,12 +27,16 @@ function Busca() {
     return(
         <>  
             <div className="input">
-                <input type="text" placeholder="Buscar por um filme" onKeyPress={handleKeyPress}/>
+                <input type="text" placeholder="Buscar por um filme" onKeyPress={handleKeyPress} />
             </div>
             <hr></hr>
+            {text === '' || teste.length === 0
+            ? 
+            <div className="busca">Não foram encontrados filmes com esse nome!</div> 
+            : 
             <div className="busca">
                 {teste.filter(m => m.poster_path != null).map(movie => <Card movie={movie}/>)}
-            </div>
+            </div>}
         </>
     )
 }

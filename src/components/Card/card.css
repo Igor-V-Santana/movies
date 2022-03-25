@@ -9,6 +9,8 @@
     border-radius: 10px;
     transition: .7s;
     cursor: pointer;
+    color: #000;
+    text-decoration: none;
 }
 .cardSearch:hover{
     opacity: 0.5;

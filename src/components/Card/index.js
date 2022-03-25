@@ -1,11 +1,12 @@
 import './card.css';
+import { Link } from 'react-router-dom';
 
 function Card({movie}){
 
     const date = new Date(movie.release_date).toLocaleDateString('pt-br');
 
     return(
-        <div className="cardSearch">
+        <Link to={`/Filme/${movie.id}`} className="cardSearch">
             <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
             <div className='cardSearchInfo'>
                 <div>
@@ -16,7 +17,7 @@ function Card({movie}){
                     <p>{movie.overview}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

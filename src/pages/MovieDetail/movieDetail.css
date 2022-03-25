@@ -1,0 +1,100 @@
+.hero{
+    display: flex;
+    position: relative;
+    z-index: 5;
+    height: 570px;
+    background-color: #000;
+    padding: 0 330px;
+    display: flex;
+    align-items: center;
+}
+
+.hero .bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: .2;
+    box-shadow: inset 0px -100px 100px #000;
+    background-color: black;
+}
+
+.hero img{
+    border-radius: 15px;
+    height: 480px;
+    width: 300px;
+}
+
+.serieInfo{
+    color: #fff;
+    margin-left: 20px;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+.serieInfo ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.serieInfo ul li{
+    border: 2px solid #fff;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.score{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.serieInfoOverview {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+.teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.teste ul {
+    display: flex;
+    overflow-x: scroll;
+    width: 68%;
+    padding: 0 0 10px 0;
+}
+.teste ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 20px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    height: 300px;
+}
+.teste ul li img{
+    width: 150px;
+    border-radius: 10px 10px 0 0;
+}
+
+.actor{
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.character{
+    font-size: 13px;
+    margin-left: 5px;
+}
