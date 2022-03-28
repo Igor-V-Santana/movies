@@ -11,13 +11,13 @@
     justify-content: space-evenly;
     background-color: #0d253f;
     color: #fff;
-    width: 65%;
+    width: 80%;
     padding: 0 20px;
     border-radius: 0 0 10px 10px;
 }
 
 .a input{
-    width: 90%;
+    width: 80%;
     height: 50px;
     border-radius: 20px;
     border: none;
@@ -45,4 +45,27 @@
 
 .btnSearchj:hover{
     color: #000;
+}
+
+@media (max-width: 1090px){
+    .inputSearch{
+        height: 250px;
+    }
+    .input-field{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-field a{
+        text-align: center;
+        width: 50%;
+        position: static;
+        margin-top: 10px;
+    }
+    .a{
+        width: 100%;
+    }
+    .a h1{
+        display: none;
+    }
 }

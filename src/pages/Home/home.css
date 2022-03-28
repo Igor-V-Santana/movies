@@ -7,7 +7,7 @@
 .moviesList{
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 78%;
     margin-top: 20px;
 }
 .moviesList h2{

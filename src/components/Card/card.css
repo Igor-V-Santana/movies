@@ -46,3 +46,9 @@
     color: rgba(0, 0, 0, 0.5);
     margin-top: 5px;
 }
+
+@media (max-width: 590px){
+    .cardSearch{
+        width: 80%;
+    }
+}

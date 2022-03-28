@@ -4,13 +4,17 @@ header {
     justify-content: space-between;
     height: 64px;
     width: 100%;
-    padding: 0 340px;
+    /* padding: 0 340px; */
     background-color: #0d253f;
 }
 header h1{
-    color: #fff
+    color: #fff;
+    margin-left: 10%;
 }
 
+header nav{
+    margin-right: 10%;
+}
 header nav a{
     margin: 10px;
     color: #fff;
@@ -25,4 +29,14 @@ header nav a:hover{
     opacity: 0.5;
     background-color: #fff;
     color: #0d253f;
+}
+
+@media (max-width: 1090px){
+    nav{
+        display: none;
+    }
+}
+
+.navlink.active{
+    color: rgb(102, 102, 102);
 }

@@ -4,7 +4,7 @@
     z-index: 5;
     height: 570px;
     background-color: #000;
-    padding: 0 330px;
+    padding: 0 190px;
     display: flex;
     align-items: center;
 }
@@ -32,7 +32,6 @@
 .serieInfo{
     color: #fff;
     margin-left: 20px;
-    max-width: 100%;
     font-weight: bold;
 }
 
@@ -53,6 +52,9 @@
     align-items: center;
     margin-top: 10px;
 }
+.score span{
+    margin-left: 10px;
+}
 
 .serieInfoOverview {
     font-family: sans-serif;
@@ -60,20 +62,25 @@
     font-size: 15px;
     margin-top: 20px;
     line-height: 25px;
+    text-align: justify;
 }
 
 .teste{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 20px;
+    margin-left: 160px;
+    margin-bottom: 20px;
 }
-
+.teste h2{
+    font-weight: 400;
+    margin-left: 30px;
+}
 .teste ul {
     display: flex;
     overflow-x: scroll;
-    width: 68%;
-    padding: 0 0 10px 0;
+    width: 85%;
+    padding: 20px 0 10px 0;
 }
 .teste ul li{
     display: flex;
@@ -97,4 +104,17 @@
 .character{
     font-size: 13px;
     margin-left: 5px;
+}
+
+.crew{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 30px;
+}
+.crew ul li p{
+    font-weight: 100;
+}
+.crew ul li{
+    border: none;
 }

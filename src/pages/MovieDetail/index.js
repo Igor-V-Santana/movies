@@ -1,7 +1,8 @@
 import './movieDetail.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { BsFillStarFill } from 'react-icons/bs';
 
     function MovieDetail() {
 
@@ -9,16 +10,17 @@ import { useLocation, useNavigate } from "react-router-dom";
         const urlId = location.pathname.replace("/Filme/", "");
     
         const [movie, setMovie] = useState([]);
-        const [actors, setActors] = useState([])
+        const [actors, setActors] = useState([]);
+        const [crew, setCrew] = useState([]);
     
         async function getMovieDetail() {
             try{
                 const response = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=pt-BR`);
                 const details = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}/credits?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=en-US`)
                 setMovie(response.data);
-                console.log(response.data)
-                console.log(details.data.cast)
-                setActors(details.data.cast)
+                setActors(details.data.cast);
+                setCrew(details.data.crew);
+                console.log(details.data.crew);
             } catch(err) {
                 console.log(err);
             }
@@ -47,14 +49,33 @@ import { useLocation, useNavigate } from "react-router-dom";
                             </li>
                         ))}
                     </ul>
-                    <div className="score"><span>{movie.vote_average}</span></div>
+                    <div className="score"><BsFillStarFill color="#ffff00"/><span>{movie.vote_average}</span></div>
                     <p className="serieInfoOverview">{movie.overview}</p>
+                    <div className='crew'>
+                        <ul>
+                            {crew.filter(c => c.job === 'Director').map(crewFiltered => (
+                                <li>
+                                    {crewFiltered.name}
+                                    <p>Diretor</p>
+                                </li>
+                            ))}
+                        </ul>
+                        <ul>
+                            {crew.filter(c => c.job === 'Novel').map(crewFiltered => (
+                                <li>
+                                    {crewFiltered.name}
+                                    <p>Escritor</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div className='teste'>
+                <h2>Elenco:</h2>
                 <ul>
-                    {actors.map(actor => (
-                    <li>
+                    {actors.filter(person => person.profile_path !== null).map(actor => (
+                    <li key={actor.id}>
                         <img src={`https://www.themoviedb.org/t/p/original/${actor.profile_path}`} />
                         <p className='actor'>{actor.name}</p>
                         <p className='character'>{actor.character}</p>

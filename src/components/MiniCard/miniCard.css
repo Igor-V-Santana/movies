@@ -1,6 +1,7 @@
 .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-right: 20px;
     cursor: pointer;
     transition: .7s;
@@ -20,9 +21,15 @@
     font-weight: bold;
     font-size: 14px;
     margin-left: 10px;
+    text-align: center;
 }
 
 .movieDate{
     font-size: 13px;
     margin-left: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
