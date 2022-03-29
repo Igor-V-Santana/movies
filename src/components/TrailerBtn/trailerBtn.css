@@ -1,0 +1,23 @@
+button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .7s;
+}
+
+button:hover{
+    opacity: 0.5;
+}
+
+@media (max-width: 870px){
+    button{
+        display: none;
+    }
+}

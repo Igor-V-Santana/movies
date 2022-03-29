@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { BsFillStarFill } from 'react-icons/bs';
+import TrailerBtn from '../../components/TrailerBtn';
 
     function MovieDetail() {
 
@@ -12,15 +13,19 @@ import { BsFillStarFill } from 'react-icons/bs';
         const [movie, setMovie] = useState([]);
         const [actors, setActors] = useState([]);
         const [crew, setCrew] = useState([]);
+        const [modal, setModal] = useState(false);
+        const [trailer, setTrailer] = useState([])
     
         async function getMovieDetail() {
             try{
                 const response = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=pt-BR`);
-                const details = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}/credits?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=en-US`)
+                const details = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}/credits?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=en-US`);
+                const videos = await axios.get(`https://api.themoviedb.org/3/movie/${urlId}/videos?api_key=f2fc535d6d8937dfb8102f933d32b2ce&language=en-US`);
                 setMovie(response.data);
                 setActors(details.data.cast);
                 setCrew(details.data.crew);
-                console.log(details.data.crew);
+                setTrailer(videos.data.results)
+                console.log(videos.data.results);
             } catch(err) {
                 console.log(err);
             }
@@ -30,8 +35,20 @@ import { BsFillStarFill } from 'react-icons/bs';
             getMovieDetail();
         }, []);
 
+        function modalOn(){
+            setModal(true)
+        }
+
         return(
-        <div>
+        <div className='movieDetail'>
+            <div className={modal ? 'modal-bg' : 'modal-of'}>
+                <div className='modal'>
+                    <div><button onClick={() => setModal(false)}>X</button></div>
+                    <div className='trailers'>{trailer.filter(trailer => trailer.official === true && trailer.type === 'Trailer').map(trailerOfficial => (
+                        <iframe width="700" height="400" src={`https://www.youtube.com/embed/${trailerOfficial.key}`}></iframe>
+                    ))}</div>
+                </div>
+            </div>
             <div className="hero">
                 <div className="bg"
                 style={{backgroundImage: `url(https://www.themoviedb.org/t/p/original${movie.backdrop_path})`}}
@@ -42,7 +59,7 @@ import { BsFillStarFill } from 'react-icons/bs';
                 </div>
                 <div className="serieInfo">
                     <h1>{movie.title}</h1>
-                    <ul>
+                    <ul className="genres">
                         {movie.genres?.map(genre => (
                             <li key={genre.id}>
                                 {genre.name}
@@ -69,6 +86,7 @@ import { BsFillStarFill } from 'react-icons/bs';
                             ))}
                         </ul>
                     </div>
+                    <TrailerBtn modalOn={modalOn}/>
                 </div>
             </div>
             <div className='teste'>
